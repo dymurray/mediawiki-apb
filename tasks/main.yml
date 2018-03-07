@@ -1,8 +1,8 @@
 ---
 # tasks file for mediawiki-apb
-- debug:
+- name: DEBUG
+  debug:
     msg: "{{ apb_action }}"
-- service:
-    name: httpd
-    state: started
-  become: true
+
+- include_tasks: provision.yml
+  when: apb_action == 'provision'

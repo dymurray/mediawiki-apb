@@ -25,5 +25,15 @@ cwogICAgICAgIHR5cGU6IHN0cmluZwogICAgICAgIHRpdGxlOiBNZWRpYXdpa2kgQWRtaW4gVXNl\
 ciBQYXNzd29yZAogICAgICAgIHJlcXVpcmVkOiBUcnVlCiAgICAgICAgZGlzcGxheV90eXBlOiBw\
 YXNzd29yZAo="
 
+RUN git clone https://github.com/openshift/openshift-restclient-python
+RUN cd openshift-restclient-python \
+    && pip install -r requirements.txt \
+    && python setup.py install
+
+RUN echo "localhost ansible_connection=local" > /etc/ansible/hosts \
+    && echo '[defaults]' > /etc/ansible/ansible.cfg \
+    && echo 'library = /usr/share/ansible/openshift' >> /etc/ansible/ansible.cfg
+
 ADD playbooks /runner/project/
 COPY . /etc/ansible/roles/mediawiki-apb
+ADD .kube /root/.kube

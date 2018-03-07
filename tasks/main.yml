@@ -1,0 +1,8 @@
+---
+# tasks file for mediawiki-apb
+- debug:
+    msg: "{{ apb_action }}"
+- service:
+    name: httpd
+    state: started
+  become: true

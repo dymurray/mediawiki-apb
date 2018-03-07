@@ -1,0 +1,8 @@
+- name: mediawiki-apb playbook to provision the application
+  hosts: all
+  gather_facts: False
+  vars:
+    apb_action: provision
+  roles:
+  - role: mediawiki-apb
+    

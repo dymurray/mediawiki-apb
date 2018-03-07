@@ -5,5 +5,5 @@
     apb_action: provision
   roles:
   - role: ansible.kubernetes-modules
-  - role: mediawiki-apb
+  - role: dymurray.mediawiki-apb
     

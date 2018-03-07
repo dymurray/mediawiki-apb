@@ -3,6 +3,7 @@
   gather_facts: False
   vars:
     apb_action: provision
+    namespace: "{{ namespace }}"
   roles:
   - role: ansible.kubernetes-modules
   - role: dymurray.mediawiki-apb

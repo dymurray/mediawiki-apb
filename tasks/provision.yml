@@ -49,6 +49,18 @@
         value: "{{ mediawiki_admin_pass }}"
       - name: MEDIAWIKI_SITE_SERVER
         value: '{{ route.route.spec.host }}'
+      - name: DB_TYPE
+        value: postgres
+      - name: DB_HOST
+        value: postgresql
+      - name: DB_PORT
+        value: 5432
+      - name: DB_USER
+        value: "{{ postgresql_user }}"
+      - name: DB_PASSWORD
+        value: "{{ postgresql_password }}"
+      - name: DB_NAME
+        value: "{{ postgresql_database }}"
       image: docker.io/ansibleplaybookbundle/mediawiki123:latest
       name: mediawiki
       ports:

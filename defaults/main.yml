@@ -6,3 +6,7 @@ mediawiki_site_name: MediaWiki
 mediawiki_site_lang: en
 mediawiki_admin_user: admin
 mediawiki_admin_pass: admin
+postgresql_database: mediawiki
+postgresql_user: admin
+postgresql_password: changeme
+postgresql_version: '9.6'

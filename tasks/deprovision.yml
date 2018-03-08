@@ -1,0 +1,24 @@
+---
+- name: delete mediawiki route
+  openshift_v1_route:
+    name: mediawiki
+    namespace: '{{ namespace }}'
+    state: absent
+
+- name: delete persistent volume claim
+  k8s_v1_persistent_volume_claim:
+    name: mediawiki-pvc
+    namespace: '{{ namespace }}'
+    state: absent
+
+- name: delete deployment config
+  openshift_v1_deployment_config:
+    name: mediawiki
+    namespace: '{{ namespace }}'
+    state: absent
+
+- name: delete mediawiki service
+  k8s_v1_service:
+    name: mediawiki
+    namespace: '{{ namespace }}'
+    state: absent

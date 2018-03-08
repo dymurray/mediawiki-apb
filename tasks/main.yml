@@ -3,10 +3,9 @@
 - name: DEBUG
   debug:
     msg: "{{ apb_action }}"
-- include_role:
-    name: dymurray.postgresql-apb
-  vars:
-    namespace: "{{ namespace }}"
 
 - include_tasks: provision.yml
   when: apb_action == 'provision'
+- include_tasks: deprovision.yml
+  when: apb_action == 'deprovision'
+

@@ -1,10 +1,11 @@
 version: 1.0
-name: mediawiki-ag-apb
+name: mediawiki-db-apb
+role: dymurray.mediawiki-apb
 description: Mediawiki apb implementation
 bindable: False
 async: optional
 metadata:
-  displayName: Mediawiki (AG-APB)
+  displayName: Mediawiki + Postgresql (APB)
 plans:
   - name: default
     description: An APB that deploys MediaWiki

@@ -5,6 +5,7 @@ description: Mediawiki apb implementation
 bindable: False
 async: optional
 metadata:
+  imageUrl: https://sdtimes.com/wp-content/uploads/2016/10/1012.sdt-redhat.jpeg
   displayName: Mediawiki + Postgresql (APB)
 plans:
   - name: default
